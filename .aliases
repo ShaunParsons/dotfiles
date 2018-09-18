@@ -1,1 +1,39 @@
 alias ll='ls -alhF'
+
+# list what apps are listening on what prts
+alias applisten='lsof -P -i -n'
+
+# lock the screen (when going afk)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# kill all the tabs in Chrome to free up memory
+# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
+alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
+
+# make mkdir create path of dirs by default
+alias mkdir="mkdir -pv"
+
+# git abbreviations
+alias gp='git pull'
+alias gc='git checkout'
+alias gr='git rebase'
+alias gps='git push'
+alias gpsf='git push -f'
+alias gs='git status'
+
+# uses aws cli to lookup instances based on a filter on the Name tag
+# $1 is the profile to use
+# $2 is the filter to use
+# $3 is the output format defaults to 'table'
+# $4 is optional, the value doesn't matter but if passed in will result
+#    in this function printing out the raw command its about to run
+#    for debugging purposes
+awslookup() {
+  cmd="aws --profile $1 ec2 describe-instances --filters \"Name=tag:Name,Values=$2\" --query 'Reservations[].Instances[].[InstanceId,PublicDnsName,PrivateIpAddress,State.Name,InstanceType,join(\`,\`,Tags[?Key==\`Name\`].Value)]' --output ${3:-table}"
+  if [ $# -eq 4 ]
+  then
+    echo "Running $cmd"
+  fi
+  eval $cmd
+}
+
