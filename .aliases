@@ -20,6 +20,10 @@ alias gr='git rebase'
 alias gps='git push'
 alias gpsf='git push -f'
 alias gs='git status'
+alias gl='git log  --color --graph --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset'\'' --abbrev-commit'
+
+# local ip address
+alias local_ip='ifconfig en0 | grep inet | grep -v inet6 | awk '\''{print $2}'\'
 
 # uses aws cli to lookup instances based on a filter on the Name tag
 # $1 is the profile to use
@@ -36,4 +40,12 @@ awslookup() {
   fi
   eval $cmd
 }
+
+
+
+# local aliases can be defined in a .local_aliases file that is not part of source control
+if [ -f ~/.local_aliases ]; then
+    . ~/.local_aliases
+fi
+
 
