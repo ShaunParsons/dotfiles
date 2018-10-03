@@ -98,6 +98,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
+### CUSTOM ###
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 # aliases can be defined in a .aliases file
 if [ -f ~/.aliases ]; then
     . ~/.aliases
