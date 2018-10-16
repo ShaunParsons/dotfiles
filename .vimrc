@@ -12,7 +12,12 @@ call vundle#begin()
 " VUNDLE PLUGINS
 " =============================================================================
 
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
 
+Plugin 'scrooloose/nerdtree'
+Plugin 'rhysd/devdocs.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
