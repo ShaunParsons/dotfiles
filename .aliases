@@ -29,6 +29,7 @@ alias dcp='docker-compose pull'
 alias dcps='docker-compose ps'
 alias dcu='docker-compose up'
 alias dcs='docker-compose stop'
+alias dcr='docker-compose stop && docker-compose up'
 
 # local ip address
 alias local_ip='ifconfig en0 | grep inet | grep -v inet6 | awk '\''{print $2}'\'
