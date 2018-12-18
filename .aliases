@@ -35,6 +35,9 @@ alias dcr='docker-compose stop && docker-compose up'
 # local ip address
 alias local_ip='ifconfig en0 | grep inet | grep -v inet6 | awk '\''{print $2}'\'
 
+# grep
+alias grep='grep -I --color'
+
 # uses aws cli to lookup instances based on a filter on the Name tag
 # $1 is the profile to use
 # $2 is the filter to use
