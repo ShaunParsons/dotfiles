@@ -102,6 +102,7 @@ source $ZSH/oh-my-zsh.sh
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export GREP_OPTIONS="--exclude=\*.un~"
 
 # aliases can be defined in a .aliases file
 if [ -f ~/.aliases ]; then
@@ -113,3 +114,5 @@ if [ -f ~/.exports ]; then
     . ~/.exports
 fi
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
