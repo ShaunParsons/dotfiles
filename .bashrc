@@ -9,7 +9,7 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-export GREP_OPTIONS="--exclude=\*.un~"
+export GREP_OPTIONS="-I"
 
 # aliases can be defined in a .aliases file
 if [ -f ~/.aliases ]; then
