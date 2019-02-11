@@ -31,6 +31,7 @@ alias dcu='docker-compose up'
 alias dcs='docker-compose stop'
 alias dcd='docker-compose stop'
 alias dcr='docker-compose stop && docker-compose up'
+alias dcremoveall='docker rmi $(docker images -q)'
 
 # local ip address
 alias local_ip='ifconfig en0 | grep inet | grep -v inet6 | awk '\''{print $2}'\'
