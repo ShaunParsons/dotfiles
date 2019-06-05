@@ -56,11 +56,3 @@ set backupdir=/tmp//
 set directory=/tmp//
 set undodir=/tmp//
 
-" =============================================================================
-" DISABLE ARROW KEYS 
-" =============================================================================
-
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>

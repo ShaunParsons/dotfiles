@@ -34,6 +34,10 @@ alias dcr='docker-compose stop && docker-compose up'
 alias dcremoveall='docker rmi $(docker images -q)'
 alias dcstopall='docker stop $(docker ps -q)'
 
+dcb() {
+    docker-compose exec $1 /bin/bash
+}
+
 # local ip address
 alias local_ip='ifconfig en0 | grep inet | grep -v inet6 | awk '\''{print $2}'\'
 
@@ -42,6 +46,11 @@ alias grep='grep -I --color'
 
 # node
 alias npmclear='rm -rf node_modules && rm package-lock.json'
+
+# bearer token
+ebt() {
+    export BEARER_TOKEN=$1
+}
 
 # uses aws cli to lookup instances based on a filter on the Name tag
 # $1 is the profile to use
