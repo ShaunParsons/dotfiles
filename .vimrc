@@ -20,6 +20,7 @@ Plugin 'rhysd/devdocs.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'csexton/trailertrash.vim'
+Plugin 'posva/vim-vue'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
