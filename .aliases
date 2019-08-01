@@ -19,7 +19,7 @@ alias gc='git checkout'
 alias gr='git rebase'
 alias gps='git push'
 alias gbn="git config --get remote.origin.url | grep git | cut -d ':' -f2 | cut -d '.' -f1"
-alias gpsn='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD) && firefox https://github.com/$(gbn)/pull/new/$(git rev-parse --abbrev-ref HEAD)'
+alias gpsn='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD) && $(echo $BROWSER) https://github.com/$(gbn)/pull/new/$(git rev-parse --abbrev-ref HEAD)'
 alias gpsf='git push --force-with-lease'
 alias gs='git status'
 alias gcm='git checkout master && git pull'
@@ -84,7 +84,7 @@ gitrelease() {
         echo "Last Release: $LAST_RELEASE"
         echo "New Release: $NEW_RELEASE"
 
-        LOG=$(git log --pretty=format:"[%an](https://github.com/%an) | %h | %s" ^$LAST_RELEASE $CURRENT_COMMIT)
+        LOG=$(git log --pretty=format:"[%an](https://github.com/%an) | %h | %s" ^$LAST_RELEASE $CURRENT_COMMIT | sed 's/\"/\\\"/g')
 
         OUTPUT=$(echo "| Author | Commit | Description |\n|-|-|-|\n$LOG" | sed ':a;N;$!ba;s/\n/\\n/g')
 
