@@ -17,6 +17,7 @@ alias mkdir="mkdir -pv"
 alias gp='git pull'
 alias gc='git checkout'
 alias gr='git rebase'
+alias grm='git rebase -i master'
 alias gps='git push'
 alias gbn="git config --get remote.origin.url | grep git | cut -d ':' -f2 | cut -d '.' -f1"
 alias gpsn='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD) && $(echo $BROWSER) https://github.com/$(gbn)/pull/new/$(git rev-parse --abbrev-ref HEAD)'
@@ -25,6 +26,14 @@ alias gs='git status'
 alias gcm='git checkout master && git pull'
 alias gcam='git commit -am'
 alias gl='git log --color --graph --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset'\'' --abbrev-commit'
+
+gcamp () {
+    gcam "$1" && gps
+}
+
+gcampn () {
+    gcam "$1" && gpsn
+}
 
 # docker-compose abbreviations
 alias dc='docker-compose'

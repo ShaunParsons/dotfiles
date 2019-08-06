@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="bullet-train"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -100,8 +100,9 @@ source $ZSH/oh-my-zsh.sh
 
 ### CUSTOM ###
 
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
+export TERM="xterm-256color"
 
 # aliases can be defined in a .aliases file
 if [ -f ~/.aliases ]; then
@@ -113,5 +114,22 @@ if [ -f ~/.exports ]; then
     . ~/.exports
 fi
 
+export BULLETTRAIN_CONTEXT_DEFAULT_USER=shaun
+
+export BULLETTRAIN_PROMPT_ORDER=(
+    time
+    status
+    custom
+    context
+    dir
+    screen
+    git
+    hg
+    cmd_exec_time
+  )
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
