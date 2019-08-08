@@ -45,6 +45,9 @@ alias dcd='docker-compose stop'
 alias dcr='docker-compose stop && docker-compose up'
 alias dcremoveall='docker rmi $(docker images -q)'
 alias dcstopall='docker stop $(docker ps -q)'
+alias dcrt='docker-compose run test'
+alias dcrut='docker-compose run unittest'
+alias dcrit='docker-compose run integrationtest'
 
 dcb() {
     docker-compose exec $1 /bin/bash
@@ -113,6 +116,9 @@ gitrelease() {
         curl -v -X POST -H "Content-Type: application/json" -H "Authorization: token $GITHUB_ACCESS_TOKEN" "$ROUTE" -d $JSON
     fi
 }
+
+# alias v to open the default text editor
+alias v="$EDITOR"
 
 # local aliases can be defined in a .local_aliases file that is not part of source control
 if [ -f ~/.local_aliases ]; then
