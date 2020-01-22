@@ -23,6 +23,7 @@ Plugin 'csexton/trailertrash.vim'
 Plugin 'posva/vim-vue'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'adoy/vim-php-refactoring-toolbox'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -36,6 +37,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
+
 " =============================================================================
 " VIM AIRLINE SETTINGS
 " =============================================================================
@@ -43,6 +45,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='simple'
 
 let g:airline_powerline_fonts = 1
+
+" =============================================================================
+" VIM PHP REFACTORING TOOLBOX SETTINGS
+" =============================================================================
+
 
 " =============================================================================
 " VIM SETTINGS
@@ -59,6 +66,7 @@ set incsearch
 set showmatch
 set hlsearch
 set showcmd
+set ttimeoutlen=100
 
 set backupdir=/tmp//
 set directory=/tmp//

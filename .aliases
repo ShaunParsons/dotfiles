@@ -43,15 +43,12 @@ alias dcps='docker-compose ps'
 alias dcu='docker-compose up'
 alias dcs='docker-compose stop -t0'
 alias dcd='docker-compose stop'
-alias dcrestart='docker-compose stop && docker-compose up'
-alias dcremoveall='docker rmi $(docker images -q)'
-alias dcstopall='docker stop $(docker ps -q)'
+alias dcrestart='docker-compose stop && docker-compose start'
 alias dcr='docker-compose run'
-alias dcrt='docker-compose run test'
-alias dcrut='docker-compose run unittest'
-alias dcrit='docker-compose run integrationtest'
 alias dcl='docker-compose logs -f'
 
+# get bash shell on container
+# usage `dcb <service name>`
 dcb() {
     docker-compose exec $1 /bin/bash
 }
