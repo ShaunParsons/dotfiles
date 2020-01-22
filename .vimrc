@@ -111,6 +111,9 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 
+" two spaces for .yml
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 " shortcut for moving btw open buffers
 nnoremap <leader>. :bn<CR>  " next buffer
 nnoremap <leader>, :bp<CR>  " previous buffer
