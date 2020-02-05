@@ -50,7 +50,6 @@ let g:airline_powerline_fonts = 1
 " VIM PHP REFACTORING TOOLBOX SETTINGS
 " =============================================================================
 
-
 " =============================================================================
 " VIM SETTINGS
 " =============================================================================
@@ -113,6 +112,10 @@ set softtabstop=4
 
 " two spaces for .yml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" two spaces for .vue
+au! BufNewFile,BufRead *.vue setf vue
+autocmd FileType vue setlocal ts=2 sts=2 sw=2 expandtab
 
 " shortcut for moving btw open buffers
 nnoremap <leader>. :bn<CR>  " next buffer
