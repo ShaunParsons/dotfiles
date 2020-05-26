@@ -24,6 +24,7 @@ Plugin 'posva/vim-vue'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'adoy/vim-php-refactoring-toolbox'
+Plugin 'dense-analysis/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,6 +46,15 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='simple'
 
 let g:airline_powerline_fonts = 1
+
+" =============================================================================
+" ALE SETTINGS
+" =============================================================================
+let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_fixers = {'javascript': ['eslint']}
+let g:ale_fix_on_save = 1
+let g:airline#extensions#ale#enabled = 1
+let g:ale_set_highlights = 0
 
 " =============================================================================
 " VIM PHP REFACTORING TOOLBOX SETTINGS
@@ -115,11 +125,11 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " two spaces for .js
 au! BufNewFile,BufRead *.js setf js
-autocmd FileType js setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType js setlocal ts=4 sts=4 sw=4 expandtab
 
 " two spaces for .vue
 au! BufNewFile,BufRead *.vue setf vue
-autocmd FileType vue setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType vue setlocal ts=4 sts=4 sw=4 expandtab
 
 " shortcut for moving btw open buffers
 nnoremap <leader>. :bn<CR>  " next buffer
