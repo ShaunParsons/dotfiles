@@ -51,14 +51,13 @@ let g:airline_powerline_fonts = 1
 " ALE SETTINGS
 " =============================================================================
 let g:ale_linters = {'javascript': ['eslint']}
-let g:ale_fixers = {'javascript': ['eslint']}
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\ }
 let g:ale_fix_on_save = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_set_highlights = 0
-
-" =============================================================================
-" VIM PHP REFACTORING TOOLBOX SETTINGS
-" =============================================================================
 
 " =============================================================================
 " VIM SETTINGS
