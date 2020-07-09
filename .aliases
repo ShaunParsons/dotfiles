@@ -107,6 +107,9 @@ alias v="$EDITOR"
 # weather
 alias wttr="curl wttr.in/Birmingham"
 
+# cat - just because
+alias cat='curl https://poptart.spinda.net'
+
 # local aliases can be defined in a .local_aliases file that is not part of source control
 if [ -f ~/.local_aliases ]; then
     . ~/.local_aliases

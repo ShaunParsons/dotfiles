@@ -1,43 +1,43 @@
 " =============================================================================
-" VUNDLE SETUP
+" VIM PLUG SETUP
 " =============================================================================
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" This will load and install vim-plug if it isn't already installed.
+" Load vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
 " =============================================================================
-" VUNDLE PLUGINS
+" VIM PLUG PLUGINS
 " =============================================================================
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plug 'gmarik/Vundle.vim'
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'rhysd/devdocs.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'csexton/trailertrash.vim'
-Plugin 'posva/vim-vue'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'adoy/vim-php-refactoring-toolbox'
-Plugin 'dense-analysis/ale'
+Plug 'rhysd/devdocs.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'csexton/trailertrash.vim'
+Plug 'posva/vim-vue'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'adoy/vim-php-refactoring-toolbox'
+Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+" Add plugins to &runtimepath
+call plug#end()
 
 " =============================================================================
-" NERDTREE SETTINGS
+" COC SETTINGS
 " =============================================================================
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
 
 " =============================================================================
 " VIM AIRLINE SETTINGS
