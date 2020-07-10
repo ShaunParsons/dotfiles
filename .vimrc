@@ -15,9 +15,7 @@ call plug#begin('~/.vim/plugged')
 " VIM PLUG PLUGINS
 " =============================================================================
 
-" let Vundle manage Vundle, required
-Plug 'gmarik/Vundle.vim'
-
+Plug 'mhinz/vim-startify'
 Plug 'rhysd/devdocs.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'kchmck/vim-coffee-script'
@@ -62,6 +60,14 @@ let g:ale_set_highlights = 0
 " =============================================================================
 " VIM SETTINGS
 " =============================================================================
+
+let g:startify_custom_header = [
+  \ '         _                       _      /\/|',
+  \ '     ___| |__   __ _ _   _ _ __ (_) ___|/\/',
+  \ '    / __| ''_ \ / _` | | | | ''_ \| |/ _ \',
+  \ '    \__ \ | | | (_| | |_| | | | | | (_) |',
+  \ '    |___/_| |_|\__,_|\__,_|_| |_|_|\___/',
+  \ ]
 
 syntax on
 colorscheme delek
