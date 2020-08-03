@@ -28,9 +28,16 @@ Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
 
 " Add plugins to &runtimepath
 call plug#end()
+
+" =============================================================================
+" CTRLP SETTINGS
+" =============================================================================
+
+let g:ctrlp_custom_ignore = 'node_modules\|vendor\|git'
 
 " =============================================================================
 " COC SETTINGS
