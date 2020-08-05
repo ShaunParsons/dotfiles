@@ -17,7 +17,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'mhinz/vim-startify'
 Plug 'rhysd/devdocs.vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'csexton/trailertrash.vim'
 Plug 'posva/vim-vue'
@@ -29,15 +28,20 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
+Plug 'tpope/vim-surround'
 
 " Add plugins to &runtimepath
 call plug#end()
 
 " =============================================================================
-" CTRLP SETTINGS
+" FZF SETTINGS
 " =============================================================================
 
-let g:ctrlp_custom_ignore = 'node_modules\|vendor\|git'
+nnoremap <C-p> :GFiles<CR>
+nnoremap <Leader>pf :Files<CR>
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
+let $FZF_DEFAULT_OPTS='--reverse'
+
 
 " =============================================================================
 " COC SETTINGS
@@ -101,6 +105,9 @@ set undodir=/tmp//
 " set leader to be space
 let mapleader=" "
 let g:mapleader=" "
+
+" stop highlighting a search
+nnoremap <leader><space> :nohlsearch<CR>
 
 " Hide, dont close buffers
 set hidden
