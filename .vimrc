@@ -43,6 +43,11 @@ let g:ctrlp_custom_ignore = 'node_modules\|vendor\|git'
 " COC SETTINGS
 " =============================================================================
 
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gy <Plug>(coc-type-definition)
+nmap <leader>gi <Plug>(coc-implementation)
+nmap <leader>gr <Plug>(coc-references)
+nmap <leader>rr <Plug>(coc-rename)
 
 " =============================================================================
 " VIM AIRLINE SETTINGS
@@ -93,9 +98,9 @@ set backupdir=/tmp//
 set directory=/tmp//
 set undodir=/tmp//
 
-" set me leader to be comma
-let mapleader=","
-let g:mapleader=","
+" set leader to be space
+let mapleader=" "
+let g:mapleader=" "
 
 " Hide, dont close buffers
 set hidden
@@ -128,21 +133,13 @@ set autoindent
 " default ident to 2 spaces
 set expandtab
 set smarttab
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
 
 " two spaces for .yml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-" two spaces for .js
-au! BufNewFile,BufRead *.js setf js
-autocmd FileType js setlocal ts=4 sts=4 sw=4 expandtab
-
-" two spaces for .vue
-au! BufNewFile,BufRead *.vue setf vue
-autocmd FileType vue setlocal ts=4 sts=4 sw=4 expandtab
-
 " shortcut for moving btw open buffers
-nnoremap <leader>. :bn<CR>  " next buffer
-nnoremap <leader>, :bp<CR>  " previous buffer
+nnoremap <leader>h :bn<CR>  " next buffer
+nnoremap <leader>l :bp<CR>  " previous buffer
