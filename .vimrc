@@ -148,5 +148,5 @@ set softtabstop=4
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " shortcut for moving btw open buffers
-nnoremap <leader>h :bn<CR>  " next buffer
-nnoremap <leader>l :bp<CR>  " previous buffer
+nnoremap <leader>l :bn<CR>  " next buffer
+nnoremap <leader>h :bp<CR>  " previous buffer
