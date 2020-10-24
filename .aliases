@@ -28,6 +28,10 @@ alias gcm='git checkout master && git pull'
 alias gcam='git commit -am'
 alias gl='git log --color --graph --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset'\'' --abbrev-commit'
 
+gnf () {
+    touch "$1" && git add "$1"
+}
+
 gcamp () {
     gcam "$1" && gps
 }

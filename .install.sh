@@ -8,7 +8,7 @@ sudo apt install -y zsh tmux curl vim fonts-powerline ttf-ancient-fonts
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-if [! -d development/neovim ]; then
+if [ ! -d "development/neovim" ]; then
 
     # Install nvim
     mkdir -p development
