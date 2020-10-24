@@ -1,11 +1,26 @@
 #!/bin/bash
 set -e
 
+# Install curl and vim
+sudo apt install -y zsh tmux curl vim fonts-powerline ttf-ancient-fonts
+
 # Install vim plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-sudo apt install fonts-powerline ttf-ancient-fonts nvim
+if [! -d development/neovim ]; then
+
+    # Install nvim
+    mkdir -p development
+    cd development
+    git clone git@github.com:neovim/neovim.git
+    cd neovim
+    sudo apt-get install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
+    make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/neovim"
+    make install
+    cd ~
+
+fi
 
 # Install OhMyZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
