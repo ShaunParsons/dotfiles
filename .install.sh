@@ -22,16 +22,24 @@ if [ ! -d "development/neovim" ]; then
 
 fi
 
-# Install OhMyZSH
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-wget http://raw.github.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme
-mv bullet-train.zsh-theme ~/.oh-my-zsh/themes/bullet-train.zsh-theme
-cd .oh-my-zsh/plugins
-git clone https://github.com/brymck/print-alias
-cd ~
+if [ ! -d ".oh-my-zsh" ]; then
 
-# Install TMUX plugins
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    # Install OhMyZSH
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    wget http://raw.github.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme
+    mv bullet-train.zsh-theme ~/.oh-my-zsh/themes/bullet-train.zsh-theme
+    cd .oh-my-zsh/plugins
+    git clone https://github.com/brymck/print-alias
+    cd ~
+
+fi
+
+if [ ! -d ".tmux/plugins/tpm" ]; then
+
+    # Install TMUX plugins
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+fi
 
 # Install docker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
