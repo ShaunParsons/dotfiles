@@ -28,6 +28,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
 Plug 'tpope/vim-surround'
+Plug 'preservim/nerdcommenter'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -71,6 +72,19 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_set_highlights = 0
+
+" =============================================================================
+" NERDCOMMENTER SETTINGS
+" =============================================================================
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
 
 " =============================================================================
 " VIM SETTINGS

@@ -46,3 +46,8 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-
 
 # Install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
+
+# Install AWS CLI
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
