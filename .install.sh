@@ -2,7 +2,7 @@
 set -e
 
 # Install curl and vim
-sudo apt install -y zsh tmux curl vim fonts-powerline ttf-ancient-fonts
+sudo apt install -y zsh tmux curl vim fonts-powerline ttf-ancient-fonts net-tools silversearcher-ag
 
 # Install vim plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -41,8 +41,14 @@ if [ ! -d ".tmux/plugins/tpm" ]; then
 
 fi
 
+# Install docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker $(id -un)
+
 # Install docker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 
 # Install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
