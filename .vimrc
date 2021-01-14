@@ -26,9 +26,9 @@ Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'}
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
+Plug 'gruvbox-community/gruvbox'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -57,14 +57,16 @@ nmap <leader>rr <Plug>(coc-rename)
 " VIM AIRLINE SETTINGS
 " =============================================================================
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='simple'
+let g:airline_theme='gruvbox'
 
 let g:airline_powerline_fonts = 1
 
 " =============================================================================
 " ALE SETTINGS
 " =============================================================================
-let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\ }
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
@@ -100,7 +102,7 @@ let g:startify_custom_header = [
   \ ]
 
 syntax on
-colorscheme delek
+colorscheme gruvbox
 set autoindent
 set nowrap
 set undofile

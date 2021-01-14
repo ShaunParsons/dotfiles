@@ -28,6 +28,7 @@ if [ ! -d ".oh-my-zsh" ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     wget http://raw.github.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme
     mv bullet-train.zsh-theme ~/.oh-my-zsh/themes/bullet-train.zsh-theme
+    curl -L https://github.com/gruvbox-community/gruvbox-contrib/blob/master/zsh/gruvbox.zsh > ~/.oh-my-zsh/custom/themes/gruvbox.zsh-theme
     cd .oh-my-zsh/plugins
     git clone https://github.com/brymck/print-alias
     cd ~
