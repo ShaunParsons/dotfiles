@@ -29,6 +29,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
 Plug 'gruvbox-community/gruvbox'
+Plug 'pangloss/vim-javascript'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -90,6 +91,15 @@ let g:NERDCompactSexyComs = 1
 let g:NERDDefaultAlign = 'left'
 
 " =============================================================================
+" GRUVBOX SETTINGS
+" =============================================================================
+
+let g:gruvbox_contrast_dark = "medium"
+
+" Set the colorscheme after gruvbox options
+colorscheme gruvbox
+
+" =============================================================================
 " VIM SETTINGS
 " =============================================================================
 
@@ -102,7 +112,6 @@ let g:startify_custom_header = [
   \ ]
 
 syntax on
-colorscheme gruvbox
 set autoindent
 set nowrap
 set undofile
