@@ -30,6 +30,7 @@ Plug 'tpope/vim-surround'
 Plug 'preservim/nerdcommenter'
 Plug 'gruvbox-community/gruvbox'
 Plug 'pangloss/vim-javascript'
+Plug 'wakatime/vim-wakatime'
 
 " Add plugins to &runtimepath
 call plug#end()
