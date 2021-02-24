@@ -166,9 +166,9 @@ set autoindent
 " default ident to 2 spaces
 set expandtab
 set smarttab
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 
 " two spaces for .yml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
