@@ -176,3 +176,7 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 " shortcut for moving btw open buffers
 nnoremap <leader>l :bn<CR>  " next buffer
 nnoremap <leader>h :bp<CR>  " previous buffer
+
+" code folding
+set foldmethod=syntax
+set foldlevel=99
