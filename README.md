@@ -10,7 +10,7 @@ Personal dotfiles for Ubuntu/Debian-based systems. Includes configuration for zs
 | `.p10k.zsh` | Powerlevel10k prompt config (Solarized Dark colour scheme) |
 | `.tmux.conf` | Tmux config — keybindings, TPM, Solarized Dark theme |
 | `.vimrc` | Vim config |
-| `.aliases` | Shell aliases |
+| `.aliases` | Shell aliases (note: `afk`, `chromekill`, `local_ip` are macOS-only) |
 | `.bashrc` / `.bash_profile` | Bash config (fallback) |
 
 ## Fresh install
@@ -36,7 +36,7 @@ This will:
 - Build and install Neovim from source
 - Install vim-plug
 - Install TPM (Tmux Plugin Manager)
-- Install Docker and Docker Compose
+- Install Docker and Docker Compose v2 (as a Docker plugin — use `docker compose`, not `docker-compose`)
 - Install NVM
 - Install the AWS CLI
 
