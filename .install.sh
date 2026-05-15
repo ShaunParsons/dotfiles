@@ -32,7 +32,7 @@ fi
 if [ ! -d ".oh-my-zsh" ]; then
 
     # Install OhMyZSH
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     gh repo clone romkatv/powerlevel10k -- --depth=1 ~/.oh-my-zsh/custom/themes/powerlevel10k
     gh repo clone brymck/print-alias -- ~/.oh-my-zsh/custom/plugins/print-alias
 
