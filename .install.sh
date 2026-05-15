@@ -20,7 +20,7 @@ if [ ! -d "development/neovim" ]; then
     # Install nvim
     mkdir -p development
     cd development
-    git clone git@github.com:neovim/neovim.git
+    gh repo clone neovim/neovim
     cd neovim
     sudo apt-get install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
     make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/neovim"
@@ -33,15 +33,17 @@ if [ ! -d ".oh-my-zsh" ]; then
 
     # Install OhMyZSH
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
-    git clone https://github.com/brymck/print-alias ~/.oh-my-zsh/custom/plugins/print-alias
+    gh repo clone romkatv/powerlevel10k -- --depth=1 ~/.oh-my-zsh/custom/themes/powerlevel10k
+    gh repo clone brymck/print-alias -- ~/.oh-my-zsh/custom/plugins/print-alias
 
 fi
 
 if [ ! -d ".tmux/plugins/tpm" ]; then
 
-    # Install TMUX plugins
+    # Install TMUX plugin manager and plugins
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    git clone https://github.com/tmux-plugins/tmux-sensible ~/.tmux/plugins/tmux-sensible
+    git clone https://github.com/seebi/tmux-colors-solarized ~/.tmux/plugins/tmux-colors-solarized
 
 fi
 
