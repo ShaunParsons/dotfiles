@@ -1,6 +1,13 @@
 #!/bin/bash
 set -e
 
+DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Symlink dotfiles
+for file in .aliases .bash_profile .bashrc .p10k.zsh .tmux.conf .vimrc .zshrc; do
+    ln -sf "$DOTFILES_DIR/$file" "$HOME/$file"
+done
+
 # Install curl and vim
 sudo apt install -y zsh tmux curl vim fonts-powerline ttf-ancient-fonts net-tools silversearcher-ag
 
