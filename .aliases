@@ -3,10 +3,10 @@ alias ll='ls -alhF'
 # list what apps are listening on what prts
 alias applisten='lsof -P -i -n'
 
-# lock the screen (when going afk)
+# macOS only: lock the screen (when going afk)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
-# kill all the tabs in Chrome to free up memory
+# macOS only: kill all the tabs in Chrome to free up memory
 # [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
@@ -41,24 +41,24 @@ gcampn () {
     gcam "$1" && gpsn
 }
 
-# docker-compose abbreviations
-alias dc='docker-compose'
-alias dcp='docker-compose pull'
-alias dcps='docker-compose ps'
-alias dcu='docker-compose up'
-alias dcs='docker-compose stop -t0'
-alias dcd='docker-compose stop'
-alias dcrestart='docker-compose stop && docker-compose start'
-alias dcr='docker-compose run'
-alias dcl='docker-compose logs -f'
+# docker compose abbreviations
+alias dc='docker compose'
+alias dcp='docker compose pull'
+alias dcps='docker compose ps'
+alias dcu='docker compose up'
+alias dcs='docker compose stop -t0'
+alias dcd='docker compose stop'
+alias dcrestart='docker compose stop && docker compose start'
+alias dcr='docker compose run'
+alias dcl='docker compose logs -f'
 
 # get bash shell on container
 # usage `dcb <service name>`
 dcb() {
-    docker-compose exec $1 /bin/bash
+    docker compose exec $1 /bin/bash
 }
 
-# local ip address
+# macOS only: local ip address
 alias local_ip='ifconfig en0 | grep inet | grep -v inet6 | awk '\''{print $2}'\'
 
 # grep
